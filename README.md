@@ -49,7 +49,6 @@ Tokenization was applied using `tokenizer(ex["text"], truncation=True, max_lengt
 
 - The model generates joke-like text when given prompts like:
   - `"Why did the chicken cross the road?"`
-  - `"Tell me a joke about dogs."`
 - Works well in an interactive CLI setting (`interface.py`)
 - Understands some basic setups and delivers punchline-style continuations
 
