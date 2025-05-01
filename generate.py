@@ -1,4 +1,3 @@
-# generate.py
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Point this at wherever your fine-tuned model lands
@@ -9,7 +8,7 @@ model     = AutoModelForCausalLM.from_pretrained(MODEL_DIR)
 
 def generate_text(
     prompt: str,
-    max_length: int = 40,
+    max_length: int = 80,
     temperature: float = 0.7,
     top_k: int = 50,
     top_p: float = 0.9
@@ -30,4 +29,10 @@ def generate_text(
     )
     # strip off the prompt tokens
     generated = out_ids[0, input_ids.shape[1]:]
-    return tokenizer.decode(generated, skip_special_tokens=True).strip()
+    text = tokenizer.decode(generated, skip_special_tokens=True).strip()
+
+    # ── CROP AT FIRST PERIOD ──
+    if "." in text:
+        text = text.split(".", 1)[0] + "."
+
+    return text

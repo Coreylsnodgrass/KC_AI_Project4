@@ -11,7 +11,7 @@ def main():
     parser.add_argument(
         "--length",
         type=int,
-        default= 20,
+        default= 80,
         help="Number of tokens to generate (beyond prompt)"
     )
     parser.add_argument(
