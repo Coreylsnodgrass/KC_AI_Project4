@@ -69,3 +69,15 @@ Run:
 
 ```bash
 python prepare_data.py
+
+### 2. Download base model
+Run:
+
+```bash
+python train.py
+
+### 3.  FIne tune model
+Run:
+
+```bash
+python interface.py
