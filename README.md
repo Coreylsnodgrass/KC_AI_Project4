@@ -75,12 +75,20 @@ python prepare_data.py
 Run:
 
 ```bash
-python train.py
+python download.py
 ```
 
 ### 3.  FIne tune model
 Run:
 
 ```bash
+python train.py
+```
+
+### 3.  Run CLI
+Run:
+
+```bash
 python interface.py
 ```
+
